@@ -4,7 +4,11 @@ This script assumes you have a Google Sitemap file, usually at <yourdomain>/site
 
 git clone git://github.com/steflewandowski/Google-Cache-Sitemap-Downloader.git
 cd Google-Cache-Sitemap-Downloader
-ruby google_cache_sitemap_downloader.rb 'http://yourdomain.com' path/to/sitemap.xml
+ruby google_cache_sitemap_downloader.rb 'http://yourdomain.com' path/to/sitemap.xml 'your_css_selector'
+
+Eg. google_cache_sitemap_downloader.rb 'http://steflewandowski.com' ~/Desktop/sitemap.xml 'body'
+
+The last item is a CSS selector to check that the page is valid. This uses standard CSS notation to check if the specified element exists, otherwise it will not write the file. Examples: 'body', 'h1#logo', '#main_menu.navigation' and so on.
 
 The Google cache result for each url linked in your sitemap will then be downloaded into a directory 'results' as html, with slashes replaced with '_-_'
 

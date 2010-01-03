@@ -1,5 +1,5 @@
 # Google Cache Sitemap Downloader
-# Downloads all the links contained in your Wordpress Sitemap XML file from Google 
+# Downloads all the links contained in your Google Sitemap XML file from Google Cache
 # and saves the raw HTML as a series of files
 #
 # Author: Stef Lewandowski
@@ -13,7 +13,7 @@
 # 
 # Then run this script as:
 #
-# ruby google_cache_sitemap_downloader.rb 'http://mydomain.com' sitemap.xml
+# ruby google_cache_sitemap_downloader.rb 'http://mydomain.com' sitemap.xml 'body'
 
 ARGV.each do|a|
   puts "Argument: #{a}"
@@ -31,7 +31,7 @@ SITEMAP = ARGV[1]
 # Eg. If your page contains a DIV with an ID of "main", this value should be '#main'
 # If your page contains an H1 tag, you could use 'h1'
 # For more complex values, take a look at Nokogiri's CSS style selector: http://nokogiri.org
-MATCH_TO_CONFIRM_THE_PAGE_EXISTS = '#main'
+MATCH_TO_CONFIRM_THE_PAGE_EXISTS = ARGV[2]
 
 # Stop editing here
 
