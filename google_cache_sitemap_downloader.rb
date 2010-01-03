@@ -48,7 +48,8 @@ def filename_from_url (url)
   "results/" + url['loc'].gsub(BASE_URL,'').gsub("/","_-_")
 end
 
-FileUtils.mkdir 'results'
+puts "Create results directory"
+FileUtils.mkdir 'results' rescue puts "Results directory already exists"
 
 sitemap = Crack::XML.parse(File.open(SITEMAP))
 
