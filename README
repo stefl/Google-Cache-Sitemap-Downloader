@@ -5,3 +5,10 @@ This script assumes you have a Google Sitemap file, usually at <yourdomain>/site
 git clone git://github.com/steflewandowski/Google-Cache-Sitemap-Downloader.git
 cd Google-Cache-Sitemap-Downloader
 ruby google_cache_sitemap_downloader.rb 'http://yourdomain.com' path/to/sitemap.xml
+
+The Google cache result for each url linked in your sitemap will then be downloaded into a directory 'results' as html, with slashes replaced with '_-_'
+
+Google will rate-limit you and potentially complain that you are using an automated script. If that happens, the script will exit and you will have to wait some time before Google allows you to use the cache again. 
+
+The script waits 2 seconds in between requests by default to attempt to avoid this.
+
