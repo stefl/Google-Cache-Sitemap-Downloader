@@ -1,0 +1,7 @@
+Ruby script to recover HTML/text content from your site that has suffered a catastrophic database failure.
+
+This script assumes you have a Google Sitemap file, usually at <yourdomain>/sitemap.xml
+
+git clone git://github.com/steflewandowski/Google-Cache-Sitemap-Downloader.git
+cd Google-Cache-Sitemap-Downloader
+ruby google_cache_sitemap_downloader.rb 'http://yourdomain.com' path/to/sitemap.xml
